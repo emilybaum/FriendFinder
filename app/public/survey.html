@@ -18,6 +18,8 @@
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+
     <title>FF Survey</title>
 </head>
 <body>
@@ -26,13 +28,12 @@
             <div class="col-sm">
                 <h1>Survey Quesitons</h1>
                 <hr>
-                <form>
+
+                <!-- <form>
                     <div class="individual-question">
                         <h3>Question 1</h3>
                         <div>
-                            <p>Enter quesiton here....................
-
-                            </p>
+                            <p>Enter quesiton here....................</p>
                         </div>
                         <div class="d-flex justify-content-between  agree-disagree">
                             <div class="d-flex">Strongly Disagree</div>
@@ -41,36 +42,61 @@
                         <input type="range" class="custom-range" min="0" max="5" id="customRange2">
                     </div>
 
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="input" class="form-control" id="qustion2" placeholder="Enter qustion1">
-                    </div>
-
-                    <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div>
-
-
                     <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                </form> -->
+
+                <div class="panel-body">
+                    <form role="form">
+                        
+                        <div class="form-group">
+                            <label for="">Question 1</label>
+                            <p>Enter quesiton here....................</p>
+                            <!-- <input type="text" class="form-control" id="reserve_phone"> -->
+                            <select id="q0" class="form-control">
+                                <option name="1">Strongly Disagree</option>
+                                <option name="2">Disagree</option>
+                                <option name="3">Neutral</option>
+                                <option name="4">Agree</option>
+                                <option name="5">Strongly Agree</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="">Question 2</label>
+                            <p>Enter quesiton here....................</p>
+                            <!-- <input type="text" class="form-control" id="reserve_phone"> -->
+                            <select id="q1" class="form-control">
+                                <option name="1">Strongly Disagree</option>
+                                <option name="2">Disagree</option>
+                                <option name="3">Neutral</option>
+                                <option name="4">Agree</option>
+                                <option name="5">Strongly Agree</option>
+                            </select>
+                        </div>
+                
+                        <div class="form-group">
+                            <label for="">Question 3</label>
+                            <p>Enter quesiton here....................</p>
+                            <!-- <input type="text" class="form-control" id="reserve_phone"> -->
+                            <select id="q2" class="form-control">
+                                <option name="1">Strongly Disagree</option>
+                                <option name="2">Disagree</option>
+                                <option name="3">Neutral</option>
+                                <option name="4">Agree</option>
+                                <option name="5">Strongly Agree</option>
+                            </select>
+                        </div>
+                
+                        <button id="surveySubmit" type="submit" class="btn btn-primary submit">Submit</button>
+                    </form>
+                </div>
 
 
             </div> <!-- end of form column-->
         </div> <!-- end of form row-->
 
 
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            APIs
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <button class="dropdown-item" type="button">API Friend List</button>
-            <button class="dropdown-item" type="button">Action 2</button>
-            <button class="dropdown-item" type="button">Action 3</button>
-        </div>
-    </div>
+    <a href="#">Link to friends API</a>
 
 
     </div> <!-- End of main container-->
@@ -87,5 +113,43 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- <script type="text/javascript" src="../../server.js"></script> -->
+    <script type="text/javascript" src="../data/friends.js"></script>
+
+<script type="text/javascript">
+    $("#surveySubmit").on("click", function () {
+        event.preventDefault();
+
+        var surveyAnswers = {
+            q0: $("#q0").val(),
+            q1: $("#q1").val(),
+            q2: $("#q2").val(),
+            q3: $("#q3").val(),
+            q4: $("#q4").val(),
+            q5: $("#q5").val(),
+            q6: $("#q6").val(),
+            q7: $("#q7").val(),
+            q8: $("#q8").val(),
+            q9: $("#q9").val(),
+        }
+
+        console.log(surveyAnswers);
+
+        var currentURL = window.location.origin;
+
+        function pushToArr(surveyAnswers) {
+
+        }
+
+        $.post(currentURL + "/api/friends", surveyAnswers,
+            
+            function (data) {
+                console.log(data)
+        });
+
+    }) // end button click
+
+</script>
 </body>
 </html>
