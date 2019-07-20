@@ -63,11 +63,11 @@
                             <p>Enter quesiton here....................</p>
                             <!-- <input type="text" class="form-control" id="reserve_phone"> -->
                             <select id="q0" class="form-control">
-                                <option name="1">Strongly Disagree</option>
-                                <option name="2">Disagree</option>
-                                <option name="3">Neutral</option>
-                                <option name="4">Agree</option>
-                                <option name="5">Strongly Agree</option>
+                                <option class="q0" value="1">Strongly Disagree</option>
+                                <option class="q0" value="2">Disagree</option>
+                                <option class="q0" value="3">Neutral</option>
+                                <option class="q0" value="4">Agree</option>
+                                <option class="q0" value="5">Strongly Agree</option>
                             </select>
                         </div>
                         
@@ -76,11 +76,11 @@
                             <p>Enter quesiton here....................</p>
                             <!-- <input type="text" class="form-control" id="reserve_phone"> -->
                             <select id="q1" class="form-control">
-                                <option name="1">Strongly Disagree</option>
-                                <option name="2">Disagree</option>
-                                <option name="3">Neutral</option>
-                                <option name="4">Agree</option>
-                                <option name="5">Strongly Agree</option>
+                                <option class="q1" value="1">Strongly Disagree</option>
+                                <option class="q1" value="2">Disagree</option>
+                                <option class="q1" value="3">Neutral</option>
+                                <option class="q1" value="4">Agree</option>
+                                <option class="q1" value="5">Strongly Agree</option>
                             </select>
                         </div>
                 
@@ -89,11 +89,11 @@
                             <p>Enter quesiton here....................</p>
                             <!-- <input type="text" class="form-control" id="reserve_phone"> -->
                             <select id="q2" class="form-control">
-                                <option name="1">Strongly Disagree</option>
-                                <option name="2">Disagree</option>
-                                <option name="3">Neutral</option>
-                                <option name="4">Agree</option>
-                                <option name="5">Strongly Agree</option>
+                                <option class="q2" value="1">Strongly Disagree</option>
+                                <option class="q2" value="2">Disagree</option>
+                                <option class="q2" value="3">Neutral</option>
+                                <option class="q2" value="4">Agree</option>
+                                <option class="q2" value="5">Strongly Agree</option>
                             </select>
                         </div>
                 
@@ -134,27 +134,44 @@
         var surveyAnswers = {
             name: $("#name").val().trim(),
             photo: $("#photo").val().trim(),
-            q0: $("#q0").val(),
-            q1: $("#q1").val(),
-            q2: $("#q2").val(),
-            // q3: $("#q3").val(),
-            // q4: $("#q4").val(),
-            // q5: $("#q5").val(),
-            // q6: $("#q6").val(),
-            // q7: $("#q7").val(),
-            // q8: $("#q8").val(),
-            // q9: $("#q9").val(),
+            scores: [
+                $("#q0 :selected").val(),
+                $("#q1 :selected").val(),
+                $("#q2 :selected").val(),
+                // $("#q3 :selected").val(),
+                // $("#q4 :selected").val(),
+                // $("#q5 :selected").val(),
+                // $("#q6 :selected").val(),
+                // $("#q7 :selected").val(),
+                // $("#q8 :selected").val(),
+                // $("#q9 :selected").val(),
+            ]
         }
+
+        stringArrToNumbers(surveyAnswers.scores);
+
+        function stringArrToNumbers (arr) {
+            arr.map(function (item) {
+                return parseInt(item, 10);
+        })
 
         console.log(surveyAnswers);
 
+        pushToScoresArr(surveyAnswers);
 
-        function pushToArr(surveyAnswers) {
-            // not sure if this is needed or not
+        function pushToScoresArr(surveyAnswers) {
+            var scores = surveyAnswers.scores
+            var scoreArray = [];
+            for (var i = 0; i < scores.length; i++) {
+                var eachScore = scores[i];
+                console.log(eachScore)
+                scoreArray.push(eachScore);
+            }
+            console.log(scoreArray);
         }
 
 // ----------------------------------------------
-    // this does not seem to be working to post
+// POST
         var currentURL = window.location.origin;
 
         $.post(currentURL + "/api/friends", surveyAnswers,
