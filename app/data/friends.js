@@ -17,8 +17,7 @@ var friendsArray = [
     }
 ];
 
-console.log(friendsArray)
-
+// console.log(friendsArray)
 
 
 

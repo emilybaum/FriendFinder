@@ -49,6 +49,16 @@
                     <form role="form">
                         
                         <div class="form-group">
+                            <label for="user-name">Your Name</label>
+                            <input id="name" type="text" class="form-control" id="user-name" placeholder="Enter your name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="user-photo">Your Name</label>
+                            <input id="photo" type="text" class="form-control" id="user-photo" placeholder="Include a link to a photo">
+                        </div>
+
+                        <div class="form-group">
                             <label for="">Question 1</label>
                             <p>Enter quesiton here....................</p>
                             <!-- <input type="text" class="form-control" id="reserve_phone"> -->
@@ -115,38 +125,47 @@
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- <script type="text/javascript" src="../../server.js"></script> -->
-    <script type="text/javascript" src="../data/friends.js"></script>
+    <!-- <script type="text/javascript" src="../data/friends.js"></script> -->
 
 <script type="text/javascript">
     $("#surveySubmit").on("click", function () {
         event.preventDefault();
 
         var surveyAnswers = {
+            name: $("#name").val().trim(),
+            photo: $("#photo").val().trim(),
             q0: $("#q0").val(),
             q1: $("#q1").val(),
             q2: $("#q2").val(),
-            q3: $("#q3").val(),
-            q4: $("#q4").val(),
-            q5: $("#q5").val(),
-            q6: $("#q6").val(),
-            q7: $("#q7").val(),
-            q8: $("#q8").val(),
-            q9: $("#q9").val(),
+            // q3: $("#q3").val(),
+            // q4: $("#q4").val(),
+            // q5: $("#q5").val(),
+            // q6: $("#q6").val(),
+            // q7: $("#q7").val(),
+            // q8: $("#q8").val(),
+            // q9: $("#q9").val(),
         }
 
         console.log(surveyAnswers);
 
-        var currentURL = window.location.origin;
 
         function pushToArr(surveyAnswers) {
-
+            // not sure if this is needed or not
         }
+
+// ----------------------------------------------
+    // this does not seem to be working to post
+        var currentURL = window.location.origin;
 
         $.post(currentURL + "/api/friends", surveyAnswers,
             
             function (data) {
-                console.log(data)
+
+                console.log(data);
+                
         });
+// ----------------------------------------------
+
 
     }) // end button click
 

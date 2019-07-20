@@ -20,14 +20,28 @@ module.exports = function (app) {
     
     // ---------------------------------------------------------------------------
     // API POST Requests
+    // app.post("/api/friends", function (req, res) {
+    //     console.log("post is working")
+    //     // req.body is available since we're using the body parsing middleware
+    //     friendsArray.push(req.body);
+    //     console.log(req.body);
+
+    //     res.json(true);
+
+    //     console.log("post is at the end")
+
+    // });
+
+
     app.post("/api/friends", function (req, res) {
+        var newFiend = req.body;
 
-        // req.body is available since we're using the body parsing middleware
-        friendsArray.push(req.body);
-        res.json(true);
+        console.log(newFiend);
 
+        friendsArray.push(newFiend);
+
+        res.json(newFiend);
     });
-
 
     // ---------------------------------------------------------------------------
     // app.post("/api/clear", function (req, res) {
