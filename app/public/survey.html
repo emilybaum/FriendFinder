@@ -148,52 +148,65 @@
             ]
         }
 
+        var convertedSurveyAnswers = {
+            name: $("#name").val().trim(),
+            photo: $("#photo").val().trim(),
+            scores: []
+        }
+
+        console.log("next is the converted survey answers")
+        console.log(convertedSurveyAnswers)
+        console.log("---------------------------");
+
         // capture survey answers
-        console.log("next is surveyAnswers")
+        console.log("next is surveyAnswers");
         console.log(surveyAnswers);
-        console.log("---------------------------")
+        console.log("---------------------------");
 
         stringArrToNumbers(surveyAnswers.scores);
 
         // this takes an array of "string numbers" to regular numbers
         function stringArrToNumbers (arr) {
             var stringArray = arr
-            var numArray = [];
+            // var numArray = [];
             stringArray.map(function (item) {
                 var numbers = parseInt(item);
-                numArray.push(numbers)
+                convertedSurveyAnswers.scores.push(numbers)
             })
-            console.log("next is the numArray")
-            console.log(numArray);
-            console.log("---------------------------")
+            // console.log("next is the numArray")
+            // console.log(numArray);
+            // console.log("---------------------------");
 
-            pushToScoresArr(numArray);
+            // pushToScoresArr(numArray);
 
-            return numArray;
+            // return numArray;
         }
 
-        function pushToScoresArr(surveyAnswers) {
-            var scores = surveyAnswers.scores
-            var scoreArray = [];
-            for (var i = 0; i < scores.length; i++) {
-                var eachScore = scores[i];
-                console.log(eachScore)
-                scoreArray.push(eachScore);
-            }
-            console.log("score array next:")
-            console.log(scoreArray);
-            console.log("---------------------------")
-        }
+        // function pushToScoresArr(surveyAnswers) {
+        //     var scores = surveyAnswers.scores
+        //     var scoreArray = [];
+        //     for (var i = 0; i < scores.length; i++) {
+        //         var eachScore = scores[i];
+        //         console.log(eachScore)
+        //         scoreArray.push(eachScore);
+        //     }
+        //     console.log("score array next:")
+        //     console.log(scoreArray);
+        //     console.log("---------------------------")
+        // }
 
 // ----------------------------------------------
 // POST
         var currentURL = window.location.origin;
 
-        $.post(currentURL + "/api/friends", surveyAnswers,
+        $.post(currentURL + "/api/friends", convertedSurveyAnswers,
             
             function (data) {
 
-                console.log(data);
+            console.log("next is the data in the post")
+            console.log(data);
+            console.log("---------------------------");
+
                 
         });
 // ----------------------------------------------
