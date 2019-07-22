@@ -16,27 +16,17 @@ module.exports = function (app) {
     // ---------------------------------------------------------------------------
     // API POST Requests
     app.post("/api/friends", function (req, res) {
-        var newFriend = req.body;
-        var scores = newFriend.scores
+        var surveyAnswers = req.body;
+        var scores = surveyAnswers.scores
 
-        newFriend.scores = newFriend.scores.map(function (x) {
+        surveyAnswers.scores = surveyAnswers.scores.map(function (x) {
             return parseInt(x, 10);
         });
 
-        friendsArray.push(newFriend);
-        res.json(newFriend);
+        // friendsArray.push(surveyAnswers);
+        res.json(surveyAnswers);
     });
 
-
-
-    // ---------------------------------------------------------------------------
-    // CLEAR
-    // app.post("/api/clear", function (req, res) {
-    //     // Empty out the arrays of data
-    //     friendsArray.length = 0;
-
-    //     res.json({ ok: true });
-    // });
 };
 
 

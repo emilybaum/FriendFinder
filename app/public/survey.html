@@ -21,48 +21,56 @@
     <script src="https://code.jquery.com/jquery.js"></script>
 
     <!-- CSS -->
-    <link type="stylesheet" href="./assets/styles.css">
+    <!-- <link type="stylesheet" href="./assets/styles.css"> -->
 
     <title>FF Survey</title>
+
 </head>
 <body>
+
+    <style type="stylesheet">
+    
+        h1 {
+            color: blue;
+        }
+
+        #footer-text {
+            font-size: 12px;
+            text-align: center;
+            font-family: 'Oswald', sans-serif;
+            color: #949494;
+        }
+
+        .questionNum {
+            color: blue;
+        }
+    
+    </style>
+
+    <!--------------------------------------------------------------------------->
+
     <div class="container">
         <div class="row">
             <div class="col-sm">
+
                 <h1>Survey Quesitons</h1>
                 <hr>
-
-                <!-- <form>
-                    <div class="individual-question">
-                        <h3>Question 1</h3>
-                        <div>
-                            <p>Enter quesiton here....................</p>
-                        </div>
-                        <div class="d-flex justify-content-between  agree-disagree">
-                            <div class="d-flex">Strongly Disagree</div>
-                            <div class="d-flex">Strongly Agree</div>
-                        </div>
-                        <input type="range" class="custom-range" min="0" max="5" id="customRange2">
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form> -->
 
                 <div class="panel-body">
                     <form role="form">
                         
                         <div class="form-group">
-                            <label for="user-name">Your Name</label>
+                            <label for="user-name">Your name</label>
                             <input id="name" type="text" class="form-control" id="user-name" placeholder="Enter your name">
                         </div>
 
                         <div class="form-group">
-                            <label for="user-photo">Your Name</label>
+                            <label for="user-photo">A Photo of you</label>
                             <input id="photo" type="text" class="form-control" id="user-photo" placeholder="Include a link to a photo">
                         </div>
 
                         <div class="form-group">
-                            <label for="">Question 1</label>
+                            <label class="questionNum" for="">Question 1</label>
                             <p>Your mind is always buzzing with unexplored ideas and plans.</p>
                             <!-- <input type="text" class="form-control" id="reserve_phone"> -->
                             <select id="q0" class="form-control">
@@ -75,7 +83,7 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="">Question 2</label>
+                            <label class="questionNum" for="">Question 2</label>
                             <p>Generally speaking, you rely more on your experience than your imagination.</p>
                             <!-- <input type="text" class="form-control" id="reserve_phone"> -->
                             <select id="q1" class="form-control">
@@ -88,7 +96,7 @@
                         </div>
                 
                         <div class="form-group">
-                            <label for="">Question 3</label>
+                            <label class="questionNum" for="">Question 3</label>
                             <p>You find it easy to stay relaxed and focused even when there is some pressure.</p>
                             <!-- <input type="text" class="form-control" id="reserve_phone"> -->
                             <select id="q2" class="form-control">
@@ -101,7 +109,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="">Question 4</label>
+                            <label class="questionNum" for="">Question 4</label>
                             <p>You rarely do something just out of sheer curiosity.</p>
                             <!-- <input type="text" class="form-control" id="reserve_phone"> -->
                             <select id="q3" class="form-control">
@@ -114,7 +122,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="">Question 5</label>
+                            <label class="questionNum" for="">Question 5</label>
                             <p>People can rarely upset you.</p>
                             <!-- <input type="text" class="form-control" id="reserve_phone"> -->
                             <select id="q4" class="form-control">
@@ -127,7 +135,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="">Question 6</label>
+                            <label class="questionNum" for="">Question 6</label>
                             <p>It is often difficult for you to relate to other people’s feelings.</p>
                             <!-- <input type="text" class="form-control" id="reserve_phone"> -->
                             <select id="q5" class="form-control">
@@ -140,7 +148,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="">Question 7</label>
+                            <label class="questionNum" for="">Question 7</label>
                             <p>In a discussion, truth should be more important than people’s sensitivities.</p>
                             <!-- <input type="text" class="form-control" id="reserve_phone"> -->
                             <select id="q6" class="form-control">
@@ -153,7 +161,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="">Question 8</label>
+                            <label class="questionNum" for="">Question 8</label>
                             <p>You rarely get carried away by fantasies and ideas.</p>
                             <!-- <input type="text" class="form-control" id="reserve_phone"> -->
                             <select id="q7" class="form-control">
@@ -166,7 +174,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="">Question 9</label>
+                            <label class="questionNum" for="">Question 9</label>
                             <p>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</p>
                             <!-- <input type="text" class="form-control" id="reserve_phone"> -->
                             <select id="q8" class="form-control">
@@ -179,7 +187,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="">Question 10</label>
+                            <label class="questionNum" for="">Question 10</label>
                             <p>You feel more energetic after spending time with a group of people.</p>
                             <!-- <input type="text" class="form-control" id="reserve_phone"> -->
                             <select id="q9" class="form-control">
@@ -206,75 +214,44 @@
     </div> <!-- End of main container-->
     
 
-<script>
+    <!-- capture user inputs -->
+    <script type="text/javascript">
+    // ----------------------------------   
+        var currentURL = window.location.origin;
+
+        $("#surveySubmit").on("click", function () {
+        
+            event.preventDefault();
+
+            var surveyAnswers = {
+                name: $("#name").val().trim(),
+                photo: $("#photo").val().trim(),
+                scores: [
+                    $("#q0 :selected").val(),
+                    $("#q1 :selected").val(),
+                    $("#q2 :selected").val(),
+                    $("#q3 :selected").val(),
+                    $("#q4 :selected").val(),
+                    $("#q5 :selected").val(),
+                    $("#q6 :selected").val(),
+                    $("#q7 :selected").val(),
+                    $("#q8 :selected").val(),
+                    $("#q9 :selected").val(),
+                ]
+            }
+
+            // show survey answers
+            console.log("surveyAnswers are:");
+            console.log(surveyAnswers);
+            console.log("---------------------------");    
+
+            $.post(currentURL + "/api/friends", surveyAnswers)
+
+        }) // end button click
+
 
     // ----------------------------------
-
-    console.log("script in survey.html is connected")
-
-    
-
-    $("#surveySubmit").on("click", function () {
-        console.log("button was clicked")
-        event.preventDefault();
-
-        var surveyAnswers = {
-            name: $("#name").val().trim(),
-            photo: $("#photo").val().trim(),
-            scores: [
-                $("#q0 :selected").val(),
-                $("#q1 :selected").val(),
-                $("#q2 :selected").val(),
-                $("#q3 :selected").val(),
-                $("#q4 :selected").val(),
-                $("#q5 :selected").val(),
-                $("#q6 :selected").val(),
-                $("#q7 :selected").val(),
-                $("#q8 :selected").val(),
-                $("#q9 :selected").val(),
-            ]
-        }
-
-        // console.log("next is the converted survey answers")
-        // console.log(convertedSurveyAnswers)
-        // console.log("---------------------------");
-
-        // capture survey answers
-        console.log("next is surveyAnswers");
-        console.log(surveyAnswers);
-        console.log("---------------------------");
-
-
-        // var convertedSurveyAnswers = {
-        //     name: $("#name").val().trim(),
-        //     photo: $("#photo").val().trim(),
-        //     scores: []
-        // }
-
-
-        // stringArrToNumbers(surveyAnswers.scores);
-
-        // // this takes an array of "string numbers" to regular numbers
-        // function stringArrToNumbers(arr) {
-        //     var stringArray = arr
-        //     stringArray.map(function (item) {
-        //         var numbers = parseInt(item);
-        //         convertedSurveyAnswers.scores.push(numbers)
-        //     })
-        // }
-
-        $.post("/api/friends", surveyAnswers)
-
-        // console.log("this is the convertedSurveyAnswers")
-        // console.log(convertedSurveyAnswers)
-    }) // end button click
-
-    // friendsArray.push(convertedSurveyAnswers)
-
-
-// ----------------------------------
-
-</script>
+    </script>
 
 
 
