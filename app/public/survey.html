@@ -44,13 +44,14 @@
         .questionNum {
             color: blue;
         }
+        
     
     </style>
 
     <!--------------------------------------------------------------------------->
 
     <div class="container">
-        <div class="row">
+        <div id="form-row" class="row">
             <div class="col-sm">
 
                 <h1>Survey Quesitons</h1>
@@ -61,12 +62,12 @@
                         
                         <div class="form-group">
                             <label for="user-name">Your name</label>
-                            <input id="name" type="text" class="form-control" id="user-name" placeholder="Enter your name">
+                            <input id="name" type="text" class="form-required" id="user-name" placeholder="Enter your name" required>
                         </div>
 
                         <div class="form-group">
                             <label for="user-photo">A Photo of you</label>
-                            <input id="photo" type="text" class="form-control" id="user-photo" placeholder="Include a link to a photo">
+                            <input id="photo" type="text" class="form-required" id="user-photo" placeholder="Include a link to a photo" required>
                         </div>
 
                         <div class="form-group">
@@ -208,9 +209,44 @@
         </div> <!-- end of form row-->
 
 
-    <a href="/api/friends">Link to friends API</a>
+        <!-- MODAL  -->
+        <div id="modal-row" class="row pt-5">
+            <div class="col-sm">
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                    Launch demo modal
+                </button>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+
+            </div> <!-- end modal column-->
+        </div> <!-- end modal row-->
 
 
+
+        <a href="/api/friends">Link to friends API</a>
     </div> <!-- End of main container-->
     
 
@@ -220,34 +256,87 @@
         var currentURL = window.location.origin;
 
         $("#surveySubmit").on("click", function () {
-        
             event.preventDefault();
+            console.log("submit clicked")
+            // $("#form-row").addClass("d-none");
+            // $("#modal-row").removeClass("d-none");
+         
+            // validateForm()
+        // Form validation
+            // function validateForm() {
+            //     console.log("form validation")
+            //     var isValid = true;
+            //     $(".form-required").each(function () {
+            //         if ($(this).val() === "") {
+            //             isValid = false;
+            //         }
+            //     });
 
-            var surveyAnswers = {
-                name: $("#name").val().trim(),
-                photo: $("#photo").val().trim(),
-                scores: [
-                    $("#q0 :selected").val(),
-                    $("#q1 :selected").val(),
-                    $("#q2 :selected").val(),
-                    $("#q3 :selected").val(),
-                    $("#q4 :selected").val(),
-                    $("#q5 :selected").val(),
-                    $("#q6 :selected").val(),
-                    $("#q7 :selected").val(),
-                    $("#q8 :selected").val(),
-                    $("#q9 :selected").val(),
-                ]
-            }
+            //     $(".questionNum").each(function () {
 
-            // show survey answers
-            console.log("surveyAnswers are:");
-            console.log(surveyAnswers);
-            console.log("---------------------------");    
+            //         if ($(this).val() === "") {
+            //             isValid = false;
+            //         }
+            //     });
+            //     return isValid;
+            // }
 
-            $.post(currentURL + "/api/friends", surveyAnswers)
+            // if (validateForm()) {
+                // Create an object for the user"s data
+                var surveyAnswers = {
+                    name: $("#name").val().trim(),
+                    photo: $("#photo").val().trim(),
+                    scores: [
+                        $("#q0 :selected").val(),
+                        $("#q1 :selected").val(),
+                        $("#q2 :selected").val(),
+                        $("#q3 :selected").val(),
+                        $("#q4 :selected").val(),
+                        $("#q5 :selected").val(),
+                        $("#q6 :selected").val(),
+                        $("#q7 :selected").val(),
+                        $("#q8 :selected").val(),
+                        $("#q9 :selected").val(),
+                    ]
+                };
+
+            
+
+                // capture the user input
+                var userName = surveyAnswers.name;    
+
+                $.post(currentURL + "/api/friends", surveyAnswers)
+
+            // } // END OF THE FORM VALIDATION 
+
+
+            // $.get("/api/friends", function (data) {
+            //     console.log(data);
+            //     if (surveyAnswers.name === data[i].name) {
+            //         console.log("same as person")
+            //     }
+            //     // if (data) {
+            //     //     $("#stats").show();
+            //     //     $("#name").text(data.name)   ;
+            //     //     $("#role").text(data.role);
+            //     //     $("#age").text(data.age);
+            //     //     $("#force-points").text(data.forcePoints);
+            //     // } else {
+            //     //     $("#name").text(
+            //     //         "The force is not strong with this one. Your character was not found.");
+            //     //     $("#stats").hide();
+            //     // }
+            // });
+
 
         }) // end button click
+
+
+
+        
+
+
+
 
 
     // ----------------------------------
