@@ -20,6 +20,9 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery.js"></script>
 
+    <!-- CSS -->
+    <link type="stylesheet" href="./assets/styles.css">
+
     <title>FF Survey</title>
 </head>
 <body>
@@ -96,6 +99,97 @@
                                 <option class="q2" value="5">Strongly Agree</option>
                             </select>
                         </div>
+
+                        <div class="form-group">
+                            <label for="">Question 3</label>
+                            <p>Enter quesiton here....................</p>
+                            <!-- <input type="text" class="form-control" id="reserve_phone"> -->
+                            <select id="q3" class="form-control">
+                                <option class="q2" value="1">Strongly Disagree</option>
+                                <option class="q2" value="2">Disagree</option>
+                                <option class="q2" value="3">Neutral</option>
+                                <option class="q2" value="4">Agree</option>
+                                <option class="q2" value="5">Strongly Agree</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Question 3</label>
+                            <p>Enter quesiton here....................</p>
+                            <!-- <input type="text" class="form-control" id="reserve_phone"> -->
+                            <select id="q4" class="form-control">
+                                <option class="q2" value="1">Strongly Disagree</option>
+                                <option class="q2" value="2">Disagree</option>
+                                <option class="q2" value="3">Neutral</option>
+                                <option class="q2" value="4">Agree</option>
+                                <option class="q2" value="5">Strongly Agree</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Question 3</label>
+                            <p>Enter quesiton here....................</p>
+                            <!-- <input type="text" class="form-control" id="reserve_phone"> -->
+                            <select id="q5" class="form-control">
+                                <option class="q2" value="1">Strongly Disagree</option>
+                                <option class="q2" value="2">Disagree</option>
+                                <option class="q2" value="3">Neutral</option>
+                                <option class="q2" value="4">Agree</option>
+                                <option class="q2" value="5">Strongly Agree</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Question 3</label>
+                            <p>Enter quesiton here....................</p>
+                            <!-- <input type="text" class="form-control" id="reserve_phone"> -->
+                            <select id="q6" class="form-control">
+                                <option class="q2" value="1">Strongly Disagree</option>
+                                <option class="q2" value="2">Disagree</option>
+                                <option class="q2" value="3">Neutral</option>
+                                <option class="q2" value="4">Agree</option>
+                                <option class="q2" value="5">Strongly Agree</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Question 3</label>
+                            <p>Enter quesiton here....................</p>
+                            <!-- <input type="text" class="form-control" id="reserve_phone"> -->
+                            <select id="q7" class="form-control">
+                                <option class="q2" value="1">Strongly Disagree</option>
+                                <option class="q2" value="2">Disagree</option>
+                                <option class="q2" value="3">Neutral</option>
+                                <option class="q2" value="4">Agree</option>
+                                <option class="q2" value="5">Strongly Agree</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Question 3</label>
+                            <p>Enter quesiton here....................</p>
+                            <!-- <input type="text" class="form-control" id="reserve_phone"> -->
+                            <select id="q8" class="form-control">
+                                <option class="q2" value="1">Strongly Disagree</option>
+                                <option class="q2" value="2">Disagree</option>
+                                <option class="q2" value="3">Neutral</option>
+                                <option class="q2" value="4">Agree</option>
+                                <option class="q2" value="5">Strongly Agree</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Question 3</label>
+                            <p>Enter quesiton here....................</p>
+                            <!-- <input type="text" class="form-control" id="reserve_phone"> -->
+                            <select id="q9" class="form-control">
+                                <option class="q2" value="1">Strongly Disagree</option>
+                                <option class="q2" value="2">Disagree</option>
+                                <option class="q2" value="3">Neutral</option>
+                                <option class="q2" value="4">Agree</option>
+                                <option class="q2" value="5">Strongly Agree</option>
+                            </select>
+                        </div>
                 
                         <button id="surveySubmit" type="submit" class="btn btn-primary submit">Submit</button>
                     </form>
@@ -112,6 +206,77 @@
     </div> <!-- End of main container-->
     
 
+<script>
+
+    // ----------------------------------
+
+    console.log("script in survey.html is connected")
+
+    
+
+    $("#surveySubmit").on("click", function () {
+        console.log("button was clicked")
+        event.preventDefault();
+
+        var surveyAnswers = {
+            name: $("#name").val().trim(),
+            photo: $("#photo").val().trim(),
+            scores: [
+                $("#q0 :selected").val(),
+                $("#q1 :selected").val(),
+                $("#q2 :selected").val(),
+                $("#q3 :selected").val(),
+                $("#q4 :selected").val(),
+                $("#q5 :selected").val(),
+                $("#q6 :selected").val(),
+                $("#q7 :selected").val(),
+                $("#q8 :selected").val(),
+                $("#q9 :selected").val(),
+            ]
+        }
+
+        // console.log("next is the converted survey answers")
+        // console.log(convertedSurveyAnswers)
+        // console.log("---------------------------");
+
+        // capture survey answers
+        console.log("next is surveyAnswers");
+        console.log(surveyAnswers);
+        console.log("---------------------------");
+
+
+        // var convertedSurveyAnswers = {
+        //     name: $("#name").val().trim(),
+        //     photo: $("#photo").val().trim(),
+        //     scores: []
+        // }
+
+
+        // stringArrToNumbers(surveyAnswers.scores);
+
+        // // this takes an array of "string numbers" to regular numbers
+        // function stringArrToNumbers(arr) {
+        //     var stringArray = arr
+        //     stringArray.map(function (item) {
+        //         var numbers = parseInt(item);
+        //         convertedSurveyAnswers.scores.push(numbers)
+        //     })
+        // }
+
+        $.post("/api/friends", surveyAnswers)
+
+        // console.log("this is the convertedSurveyAnswers")
+        // console.log(convertedSurveyAnswers)
+    }) // end button click
+
+    // friendsArray.push(convertedSurveyAnswers)
+
+
+// ----------------------------------
+
+</script>
+
+
 
     <!-- Bootstrap scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -124,96 +289,7 @@
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- <script type="text/javascript" src="../../server.js"></script> -->
-    <!-- <script type="text/javascript" src="../data/friends.js"></script> -->
-
-<script type="text/javascript">
-    $("#surveySubmit").on("click", function () {
-        event.preventDefault();
-
-        var surveyAnswers = {
-            name: $("#name").val().trim(),
-            photo: $("#photo").val().trim(),
-            scores: [
-                $("#q0 :selected").val(),
-                $("#q1 :selected").val(),
-                $("#q2 :selected").val(),
-                // $("#q3 :selected").val(),
-                // $("#q4 :selected").val(),
-                // $("#q5 :selected").val(),
-                // $("#q6 :selected").val(),
-                // $("#q7 :selected").val(),
-                // $("#q8 :selected").val(),
-                // $("#q9 :selected").val(),
-            ]
-        }
-
-        var convertedSurveyAnswers = {
-            name: $("#name").val().trim(),
-            photo: $("#photo").val().trim(),
-            scores: []
-        }
-
-        console.log("next is the converted survey answers")
-        console.log(convertedSurveyAnswers)
-        console.log("---------------------------");
-
-        // capture survey answers
-        console.log("next is surveyAnswers");
-        console.log(surveyAnswers);
-        console.log("---------------------------");
-
-        stringArrToNumbers(surveyAnswers.scores);
-
-        // this takes an array of "string numbers" to regular numbers
-        function stringArrToNumbers (arr) {
-            var stringArray = arr
-            // var numArray = [];
-            stringArray.map(function (item) {
-                var numbers = parseInt(item);
-                convertedSurveyAnswers.scores.push(numbers)
-            })
-            // console.log("next is the numArray")
-            // console.log(numArray);
-            // console.log("---------------------------");
-
-            // pushToScoresArr(numArray);
-
-            // return numArray;
-        }
-
-        // function pushToScoresArr(surveyAnswers) {
-        //     var scores = surveyAnswers.scores
-        //     var scoreArray = [];
-        //     for (var i = 0; i < scores.length; i++) {
-        //         var eachScore = scores[i];
-        //         console.log(eachScore)
-        //         scoreArray.push(eachScore);
-        //     }
-        //     console.log("score array next:")
-        //     console.log(scoreArray);
-        //     console.log("---------------------------")
-        // }
-
-// ----------------------------------------------
-// POST
-        var currentURL = window.location.origin;
-
-        $.post(currentURL + "/api/friends", convertedSurveyAnswers,
-            
-            function (data) {
-
-            console.log("next is the data in the post")
-            console.log(data);
-            console.log("---------------------------");
-
-                
-        });
-// ----------------------------------------------
 
 
-    }) // end button click
-
-</script>
 </body>
 </html>

@@ -1,3 +1,5 @@
+
+
 var friendsArray = [
     {
         "name": "Ahmed",
@@ -17,13 +19,17 @@ var friendsArray = [
     }
 ];
 
-// console.log(friendsArray)
-
 
 
 module.exports = friendsArray;
 
 
+
+
+
+
+
+// EXAMPLE ----------------------------------------------------------------------
 // You should save your application's data inside of app/data/friends.js as an array of objects. Each of these objects should roughly follow the format below.
     // {
     //     "name": "Ahmed",
@@ -41,3 +47,5 @@ module.exports = friendsArray;
     //                 1
     //             ]
     // }
+    // --------------------------------------------------------------------------
+
