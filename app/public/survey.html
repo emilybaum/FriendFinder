@@ -26,35 +26,47 @@
 </head>
 <body>
 
+
+<div class="jumbotron jumbotron-fluid">
     <div class="container">
-        <div id="form-row" class="row">
+        <h1 class="display-4">Fluid jumbotron</h1>
+        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    </div>
+</div>
+
+
+
+    <div class="container">
+
+        <div id="form-row" class="row ">
             <div class="col-sm">
 
-                <h1>Survey Quesitons</h1>
+                <h1>Start your journey to finding your closest match</h1>
                 <hr>
 
                 <div class="panel-body">
                     <form id="form-details" role="form">
                         
-                        <div class="name-photo-group">
-                            <div class="form-group">
-                                <label for="user-name">Your name: </label>
-                                <input id="name" type="text" class="form-required" id="user-name" placeholder="Enter your name" required>
+                        <!-- NAME AND PASSWORD -->
+                        <div class="form-row">
+                            <div class="form-group col-md-4 mx-auto">
+                                <label for="user-name">Your Name: </label>
+                                <input id="name" type="text" class="form-control form-required" id="user-name"  placeholder="Enter your name" required>
                             </div>
-
-                            <div class="form-group">
-                                <label for="user-photo">A Photo of you</label>
-                                <input id="photo" type="text" class="form-required" id="user-photo" placeholder="Include a link to a photo" required>
+                            <div class="form-group col-md-4 mx-auto">
+                                <label for="user-photo">A Photo of you: </label>
+                                <input id="photo" type="text" class="form-control form-required" id="user-photo" placeholder="Include a link to a photo" required>
                             </div>
                         </div>
   
 
                         <!-- START OF QUESTIONS -->
-                        <div class="form-group">
+                        <div class="form-group mx-auto">
                             <div class="question-group">
-                                <label class="pr-2 questionNum">Question 1: </label>
+                                <label class="questionNum">Question 1: </label>
                                 <p>Your mind is always buzzing with unexplored ideas and plans.</p>
                             </div>
+
                             <!-- SLIDER -->
                             <div class="d-flex justify-content-between  agree-disagree">
                                 <div class="d-flex">Strongly Disagree</div>
@@ -63,9 +75,12 @@
                             <input type="range" class="custom-range" min="1" max="5" id="customRange1">
                         </div>
                         
-                        <div class="form-group">
-                            <label class="questionNum">Question 2</label>
-                            <p>Generally speaking, you rely more on your experience than your imagination.</p>
+                        <div class="form-group mx-auto">
+                            <div class="question-group">
+                                <label class="questionNum">Question 2:</label>
+                                <p>Generally speaking, you rely more on your experience than your imagination.</p>
+                            </div>
+                            
                             <!-- SLIDER -->
                             <div class="d-flex justify-content-between  agree-disagree">
                                 <div class="d-flex">Strongly Disagree</div>
@@ -74,9 +89,12 @@
                             <input type="range" class="custom-range" min="1" max="5" id="customRange2">
                         </div>
                 
-                        <div class="form-group">
-                            <label class="questionNum">Question 3</label>
-                            <p>You find it easy to stay relaxed and focused even when there is some pressure.</p>
+                        <div class="form-group mx-auto">
+                            <div class="question-group">
+                                <label class="questionNum">Question 3:</label>
+                                <p>You find it easy to stay relaxed and focused even when there is some pressure.</p>
+                            </div>
+
                             <!-- SLIDER -->
                             <div class="d-flex justify-content-between  agree-disagree">
                                 <div class="d-flex">Strongly Disagree</div>
@@ -85,9 +103,12 @@
                             <input type="range" class="custom-range" min="1" max="5" id="customRange3">
                         </div>
 
-                        <div class="form-group">
-                            <label class="questionNum">Question 4</label>
-                            <p>You rarely do something just out of sheer curiosity.</p>
+                        <div class="form-group mx-auto">
+                            <div class="question-group">
+                                <label class="questionNum">Question 4: </label>
+                                <p>You rarely do something just out of sheer curiosity.</p>
+                            </div>
+
                             <!-- SLIDER -->
                             <div class="d-flex justify-content-between  agree-disagree">
                                 <div class="d-flex">Strongly Disagree</div>
@@ -96,9 +117,12 @@
                             <input type="range" class="custom-range" min="1" max="5" id="customRange4">
                         </div>
 
-                        <div class="form-group">
-                            <label class="questionNum">Question 5</label>
-                            <p>People can rarely upset you.</p>
+                        <div class="form-group mx-auto">
+                            <div class="question-group">
+                                <label class="questionNum">Question 5: </label>
+                                <p>People can rarely upset you.</p>
+                            </div>
+                            
                             <!-- SLIDER -->
                             <div class="d-flex justify-content-between  agree-disagree">
                                 <div class="d-flex">Strongly Disagree</div>
@@ -107,9 +131,12 @@
                             <input type="range" class="custom-range" min="1" max="5" id="customRange5">
                         </div>
 
-                        <div class="form-group">
-                            <label class="questionNum">Question 6</label>
-                            <p>It is often difficult for you to relate to other people’s feelings.</p>
+                        <div class="form-group mx-auto">
+                            <div class="question-group">
+                                <label class="questionNum">Question 6: </label>
+                                <p>It is often difficult for you to relate to other people’s feelings.</p>
+                            </div>
+                            
                             <!-- SLIDER -->
                             <div class="d-flex justify-content-between  agree-disagree">
                                 <div class="d-flex">Strongly Disagree</div>
@@ -118,9 +145,12 @@
                             <input type="range" class="custom-range" min="1" max="5" id="customRange6">
                         </div>
 
-                        <div class="form-group">
-                            <label class="questionNum">Question 7</label>
-                            <p>In a discussion, truth should be more important than people’s sensitivities.</p>
+                        <div class="form-group mx-auto">
+                            <div class="question-group">
+                                <label class="questionNum">Question 7: </label>
+                                <p>In a discussion, truth should be more important than people’s sensitivities.</p>
+                            </div>
+                            
                             <!-- SLIDER -->
                             <div class="d-flex justify-content-between  agree-disagree">
                                 <div class="d-flex">Strongly Disagree</div>
@@ -129,9 +159,12 @@
                             <input type="range" class="custom-range" min="1" max="5" id="customRange7">
                         </div>
 
-                        <div class="form-group">
-                            <label class="questionNum">Question 8</label>
-                            <p>You rarely get carried away by fantasies and ideas.</p>
+                        <div class="form-group mx-auto">
+                            <div class="question-group">
+                                <label class="questionNum">Question 8: </label>
+                                <p>You rarely get carried away by fantasies and ideas.</p>
+                            </div>
+                            
                             <!-- SLIDER -->
                             <div class="d-flex justify-content-between  agree-disagree">
                                 <div class="d-flex">Strongly Disagree</div>
@@ -140,9 +173,12 @@
                             <input type="range" class="custom-range" min="1" max="5" id="customRange8">
                         </div>
 
-                        <div class="form-group">
-                            <label class="questionNum">Question 9</label>
-                            <p>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</p>
+                        <div class="form-group mx-auto">
+                            <div class="question-group">
+                                <label class="questionNum">Question 9: </label>
+                                <p>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</p>
+                            </div>
+                            
                             <!-- SLIDER -->
                             <div class="d-flex justify-content-between  agree-disagree">
                                 <div class="d-flex">Strongly Disagree</div>
@@ -151,9 +187,12 @@
                             <input type="range" class="custom-range" min="1" max="5" id="customRange9">
                         </div>
 
-                        <div class="form-group">
-                            <label class="questionNum">Question 10</label>
-                            <p>You feel more energetic after spending time with a group of people.</p>
+                        <div class="form-group mx-auto">
+                            <div class="question-group">
+                                <label class="questionNum">Question 10: </label>
+                                <p>You feel more energetic after spending time with a group of people.</p>
+                            </div>
+                            
                             <!-- SLIDER -->
                             <div class="d-flex justify-content-between  agree-disagree">
                                 <div class="d-flex">Strongly Disagree</div>
@@ -161,8 +200,11 @@
                             </div>
                             <input type="range" class="custom-range" min="1" max="5" id="customRange10">
                         </div>
+
+                            <button id="surveySubmit" data-target="#bestMatchModal" data-toggle="modal" type="submit"
+                            class="btn btn-primary submit mx-auto">Ready, go!</button>
                 
-                        <button id="surveySubmit" data-target="#bestMatchModal" data-toggle="modal" type="submit" class="btn btn-primary submit">Submit</button>
+                
                     </form>
                 </div>
 

@@ -4,7 +4,7 @@ font-family: 'Oswald', sans-serif;
 
 h1 {
     color: blue;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+    font-family: 'Oswald', sans-serif;
 }
 
 .questionNum {
@@ -24,16 +24,24 @@ h1 {
 .form-group {
     width: 75%;
     /* display: flex; */
+    align-content: center;
+    padding: 10px;
+
 }
 
 .question-group {
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 .name-photo-group {
     display: flex;
     justify-content: center;
+}
+
+.questionNum {
+    padding-right: 8px;
 }
 
 .modal-body {
@@ -47,3 +55,10 @@ h1 {
     border: 3px solid blue;
     width: 100%;
 }
+
+#surveySubmit {
+    width: 50%;
+    align-content: center;
+}
+
+

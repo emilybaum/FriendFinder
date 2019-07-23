@@ -3,32 +3,32 @@ var friendsArray = [
         "name": "Harry Potter",
         "photo": "https://vignette.wikia.nocookie.net/harrypotter/images/8/8d/PromoHP7_Harry_Potter.jpg/revision/latest?cb=20140603201724",
         "scores": [
+            5,
+            2,
+            4,
             1,
             1,
+            4,
+            3,
             1,
             1,
-            1,
-            1,
-            1,
-            1,
-            1,
-            1
+            3
         ]
     },
     {
         "name": "Alexander Hamilton",
         "photo": "https://upload.wikimedia.org/wikipedia/commons/0/05/Alexander_Hamilton_portrait_by_John_Trumbull_1806.jpg",
         "scores": [
+            5,
             3,
-            3,
-            3,
-            3,
-            3,
-            3,
-            3,
-            3,
-            3,
-            3,
+            4,
+            2,
+            1,
+            5,
+            5,
+            1,
+            1,
+            1,
         ]
     },
     {
