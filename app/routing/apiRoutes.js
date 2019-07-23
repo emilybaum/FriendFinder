@@ -19,14 +19,12 @@ module.exports = function (app) {
     app.post("/api/friends", function (req, res) {
         var surveyAnswers = req.body;
 
-        console.log("friendsArray")
-        console.log(friendsArray);
-        console.log("-----------------------------")
-
+        // convert string scores into numbers
         surveyAnswers.scores = surveyAnswers.scores.map(function (x) {
             return parseInt(x, 10);
         });
 
+        // represent the user in this object
         var user = {
             name: surveyAnswers.name,
             photo: surveyAnswers.photo,
@@ -40,7 +38,7 @@ module.exports = function (app) {
             }
         }
 
-
+        // call method for user match score and save as variable
         userMatchScore = user.matchScore();
         console.log("Score for the current user:");
         console.log(userMatchScore);
@@ -48,10 +46,10 @@ module.exports = function (app) {
 
                 
 
-
+        // hold the scores for available friends
         var scoresArray = [];
 
-        bestMatch = {
+        var bestMatch = {
             name: "",
             photo: "",
             currentUser: user,
@@ -61,7 +59,7 @@ module.exports = function (app) {
 
         getSumOfFriendScores(friendsArray, closest)
 
-        // add up the 
+        // sum up the scores for each friend (includes call back to find closest match)
         function getSumOfFriendScores(arr, callback) {
 
             for (var i = 0; i < arr.length; i++) {
@@ -80,10 +78,9 @@ module.exports = function (app) {
             };
 
             scoresArray.push(sum);
-            // closest(userMatchScore, scoresArray)
         }
 
-
+        // find the closet match between the user and the avaiable friends
         function closest(num, arr) {
             
             var curr = arr[0];
@@ -98,12 +95,18 @@ module.exports = function (app) {
                 }
             }
 
-            return index;
+            getBestMatchDetails(index)
         }
 
-        // SHOULD THIS ONLY USE THE NEW PERSON ADDED TO THE ARRAY??
+        function getBestMatchDetails(index) {
+            bestMatch.name = friendsArray[index].name;
+            bestMatch.photo = friendsArray[index].photo;
+        }
+
+        // add the current user to the array of available friends
         friendsArray.push(surveyAnswers);
 
+        // send the best match to the survey.html document via the callback
         res.json(bestMatch);
     });
 
