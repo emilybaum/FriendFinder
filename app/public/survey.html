@@ -21,34 +21,12 @@
     <script src="https://code.jquery.com/jquery.js"></script>
 
     <!-- CSS -->
-    <!-- <link type="stylesheet" href="./assets/styles.css"> -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
 
     <title>FF Survey</title>
 
 </head>
 <body>
-
-    <style type="stylesheet">
-    
-        h1 {
-            color: blue;
-        }
-
-        #footer-text {
-            font-size: 12px;
-            text-align: center;
-            font-family: 'Oswald', sans-serif;
-            color: #949494;
-        }
-
-        .questionNum {
-            color: blue;
-        }
-        
-    
-    </style>
-
-    <!--------------------------------------------------------------------------->
 
     <div class="container">
         <div id="form-row" class="row">
@@ -200,7 +178,7 @@
                             </select>
                         </div>
                 
-                        <button id="surveySubmit" type="submit" class="btn btn-primary submit">Submit</button>
+                        <button id="surveySubmit" data-target="#exampleModalCenter" data-toggle="modal" type="submit" class="btn btn-primary submit">Submit</button>
                     </form>
                 </div>
 
@@ -214,9 +192,9 @@
             <div class="col-sm">
 
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                <!-- <button type="button" class="btn btn-primary" >
                     Launch demo modal
-                </button>
+                </button> -->
                 
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
@@ -305,37 +283,16 @@
                 // capture the user input
                 var userName = surveyAnswers.name;    
 
-                $.post(currentURL + "/api/friends", surveyAnswers)
+                $.post(currentURL + "/api/friends", surveyAnswers, function(bestMatch) {
+                    // use this space to write to the page
+                })
 
             // } // END OF THE FORM VALIDATION 
 
 
-            // $.get("/api/friends", function (data) {
-            //     console.log(data);
-            //     if (surveyAnswers.name === data[i].name) {
-            //         console.log("same as person")
-            //     }
-            //     // if (data) {
-            //     //     $("#stats").show();
-            //     //     $("#name").text(data.name)   ;
-            //     //     $("#role").text(data.role);
-            //     //     $("#age").text(data.age);
-            //     //     $("#force-points").text(data.forcePoints);
-            //     // } else {
-            //     //     $("#name").text(
-            //     //         "The force is not strong with this one. Your character was not found.");
-            //     //     $("#stats").hide();
-            //     // }
-            // });
 
 
         }) // end button click
-
-
-
-        
-
-
 
 
 

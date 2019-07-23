@@ -4,6 +4,11 @@ font-family: 'Oswald', sans-serif;
 
 h1 {
     color: blue;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+.questionNum {
+    color: blue;
 }
 
 #footer-text {
@@ -12,3 +17,4 @@ h1 {
     font-family: 'Oswald', sans-serif;
     color: #949494;
 }
+
