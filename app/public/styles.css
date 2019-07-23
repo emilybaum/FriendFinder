@@ -18,8 +18,22 @@ h1 {
     color: #949494;
 }
 
+#form-details {
+    align-content: center;
+}
 .form-group {
     width: 75%;
+    /* display: flex; */
+}
+
+.question-group {
+    display: flex;
+    justify-content: center;
+}
+
+.name-photo-group {
+    display: flex;
+    justify-content: center;
 }
 
 .modal-body {
