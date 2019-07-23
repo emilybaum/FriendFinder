@@ -12,15 +12,13 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
     
-    <!-- CSS -->
-    <link href="./assets/styles.css">
-    
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery.js"></script>
 
     <!-- CSS -->
+    <!-- <link rel="stylesheet" href="animate.min.css"> -->
     <link rel="stylesheet" type="text/css" href="styles.css">
 
     <title>FF Survey</title>
@@ -47,6 +45,14 @@
                             <label for="user-photo">A Photo of you</label>
                             <input id="photo" type="text" class="form-required" id="user-photo" placeholder="Include a link to a photo" required>
                         </div>
+
+                        <!-- SLIDER -->
+                        <div class="d-flex justify-content-between  agree-disagree">
+                            <div class="d-flex">Strongly Disagree</div>
+                            <div class="d-flex">Strongly Agree</div>
+                        </div>
+                        <input type="range" class="custom-range" min="1" max="5" id="customRange2">
+
 
                         <div class="form-group">
                             <label class="questionNum" for="">Question 1</label>
@@ -204,15 +210,13 @@
                             </div>
                             <div class="modal-body">
 
-                                <h3 id="bestMatch-name" name=""></h3>
-                                <img id="bestMatch-photo" src="">
+                                <h3 id="bestMatch-name" class="pb-3 text-center"></h3>
+                                <img id="bestMatch-photo" class="text-center" src="">
 
-                                <p>Yay!</p>
+                                <p id="bestMatch-text" class="text-center">...</p>
 
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            </div>
+                
                         </div>
                     </div>
                 </div>
@@ -263,6 +267,7 @@
                     name: $("#name").val().trim(),
                     photo: $("#photo").val().trim(),
                     scores: [
+                        $("#customRange2").val(),
                         $("#q0 :selected").val(),
                         $("#q1 :selected").val(),
                         $("#q2 :selected").val(),
@@ -272,7 +277,7 @@
                         $("#q6 :selected").val(),
                         $("#q7 :selected").val(),
                         $("#q8 :selected").val(),
-                        $("#q9 :selected").val(),
+                        // $("#q9 :selected").val(),
                     ]
                 };
 

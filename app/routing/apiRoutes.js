@@ -19,6 +19,10 @@ module.exports = function (app) {
     app.post("/api/friends", function (req, res) {
         var surveyAnswers = req.body;
 
+        console.log("surveyAnswers:")
+        console.log(JSON.stringify(surveyAnswers))
+        console.log("-----------------------------")
+
         // convert string scores into numbers
         surveyAnswers.scores = surveyAnswers.scores.map(function (x) {
             return parseInt(x, 10);

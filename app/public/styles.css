@@ -18,3 +18,18 @@ h1 {
     color: #949494;
 }
 
+.form-group {
+    width: 75%;
+}
+
+.modal-body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#bestMatch-photo {
+    display: flex;
+    border: 3px solid blue;
+    width: 100%;
+}
