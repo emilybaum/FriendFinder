@@ -11,6 +11,7 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Roboto&display=swap" rel="stylesheet">
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -18,25 +19,31 @@
     <script src="../../server.js"></script>
 
     <!-- CSS -->
-    <!-- <link rel="stylesheet" href="animate.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
 
-    <title>Friend Finder</title>
+    <title>Stranger Friends Home</title>
 </head>
 <body>
 
     <div class="container">
-        <div class="jumbotron">
-            <h1 class="display-4">Welcome to Friend Finder</h1>
-            <p class="lead">A semi-dating app</p>
+        <div class="jumbotron home-jumbo">
+            <h1 class="display-4">Welcome to the Stranger Friend Finder</h1>
+            <p class="lead">Only you can find this strange match</p>
             <hr class="my-4">
-            <p>First you will answer a few quetions by taking the survery. Then your answers will be compared with other users. The app will display the name and picture of the user with
-            the best overall match.</p>
-            <p>Make sure to put in a good picture :)</p>
-            <p>Good luck!</p>
+            <p>First, answer a few questions by taking the survery. Then, your answers will be compared with other users and the <span class="stranger-text">Stranger Things</span> cast to see who your closest match.</p>
+            <p>Make sure use a link to a good picture</p>
             <a class="btn btn-secondary btn-lg" href="/survey" role="button">Take Survey</a>
         </div>
+
+        <div class="row">
+            <div class="col-sm">
+                <img class="animated bounceInUp home-logo" src="StrangerThingsLogo-transparent.png">
+            </div>
+        </div>
+
     </div>
+
 
     <footer class="pt-3">
         <p id="footer-text" class="footer">// from the mind of <a href="https://github.com/emilybaum" target="_blank">emilybaum</a></p>

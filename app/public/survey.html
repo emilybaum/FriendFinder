@@ -11,7 +11,8 @@
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Roboto&display=swap" rel="stylesheet">
+
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -21,7 +22,7 @@
     <!-- <link rel="stylesheet" href="animate.min.css"> -->
     <link rel="stylesheet" type="text/css" href="styles.css">
 
-    <title>FF Survey</title>
+    <title>Stranger Friends Survey</title>
 
 </head>
 <body>
@@ -29,8 +30,9 @@
 
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
-        <h1 class="display-4">Fluid jumbotron</h1>
-        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        <h1 class="display-4 animated flipInX">Stranger Friend Finder</h1>
+        <p class="lead">Start your journey to finding your closest match</p>
+        
     </div>
 </div>
 
@@ -41,7 +43,7 @@
         <div id="form-row" class="row ">
             <div class="col-sm">
 
-                <h1>Start your journey to finding your closest match</h1>
+                <h1>Remember, friends don't lie</h1>
                 <hr>
 
                 <div class="panel-body">
@@ -50,12 +52,12 @@
                         <!-- NAME AND PASSWORD -->
                         <div class="form-row">
                             <div class="form-group col-md-4 mx-auto">
-                                <label for="user-name">Your Name: </label>
+                                <label for="user-name">Your Name: *</label>
                                 <input id="name" type="text" class="form-control form-required" id="user-name"  placeholder="Enter your name" required>
                             </div>
                             <div class="form-group col-md-4 mx-auto">
-                                <label for="user-photo">A Photo of you: </label>
-                                <input id="photo" type="text" class="form-control form-required" id="user-photo" placeholder="Include a link to a photo" required>
+                                <label for="user-photo">A link to a public photo of you: *</label>
+                                <input id="photo" type="text" class="form-control form-required" id="user-photo" placeholder="Paste link here" required>
                             </div>
                         </div>
   
@@ -64,7 +66,7 @@
                         <div class="form-group mx-auto">
                             <div class="question-group">
                                 <label class="questionNum">Question 1: </label>
-                                <p>Your mind is always buzzing with unexplored ideas and plans.</p>
+                                <p class="questionText">Your mind is always buzzing with unexplored ideas and plans.</p>
                             </div>
 
                             <!-- SLIDER -->
@@ -75,10 +77,12 @@
                             <input type="range" class="custom-range" min="1" max="5" id="customRange1">
                         </div>
                         
+                        <hr>
+
                         <div class="form-group mx-auto">
                             <div class="question-group">
                                 <label class="questionNum">Question 2:</label>
-                                <p>Generally speaking, you rely more on your experience than your imagination.</p>
+                                <p class="questionText">Generally speaking, you rely more on your experience than your imagination.</p>
                             </div>
                             
                             <!-- SLIDER -->
@@ -89,10 +93,12 @@
                             <input type="range" class="custom-range" min="1" max="5" id="customRange2">
                         </div>
                 
+                        <hr>
+
                         <div class="form-group mx-auto">
                             <div class="question-group">
                                 <label class="questionNum">Question 3:</label>
-                                <p>You find it easy to stay relaxed and focused even when there is some pressure.</p>
+                                <p class="questionText">You find it easy to stay relaxed and focused even when there is some pressure.</p>
                             </div>
 
                             <!-- SLIDER -->
@@ -103,10 +109,12 @@
                             <input type="range" class="custom-range" min="1" max="5" id="customRange3">
                         </div>
 
+                        <hr>
+
                         <div class="form-group mx-auto">
                             <div class="question-group">
                                 <label class="questionNum">Question 4: </label>
-                                <p>You rarely do something just out of sheer curiosity.</p>
+                                <p class="questionText">You rarely do something just out of sheer curiosity.</p>
                             </div>
 
                             <!-- SLIDER -->
@@ -117,10 +125,12 @@
                             <input type="range" class="custom-range" min="1" max="5" id="customRange4">
                         </div>
 
+                        <hr>
+
                         <div class="form-group mx-auto">
                             <div class="question-group">
                                 <label class="questionNum">Question 5: </label>
-                                <p>People can rarely upset you.</p>
+                                <p class="questionText">People can rarely upset you.</p>
                             </div>
                             
                             <!-- SLIDER -->
@@ -131,10 +141,12 @@
                             <input type="range" class="custom-range" min="1" max="5" id="customRange5">
                         </div>
 
+                        <hr>
+
                         <div class="form-group mx-auto">
                             <div class="question-group">
                                 <label class="questionNum">Question 6: </label>
-                                <p>It is often difficult for you to relate to other people’s feelings.</p>
+                                <p class="questionText">It is often difficult for you to relate to other people’s feelings.</p>
                             </div>
                             
                             <!-- SLIDER -->
@@ -145,10 +157,12 @@
                             <input type="range" class="custom-range" min="1" max="5" id="customRange6">
                         </div>
 
+                        <hr>
+
                         <div class="form-group mx-auto">
                             <div class="question-group">
                                 <label class="questionNum">Question 7: </label>
-                                <p>In a discussion, truth should be more important than people’s sensitivities.</p>
+                                <p class="questionText">In a discussion, truth should be more important than people’s sensitivities.</p>
                             </div>
                             
                             <!-- SLIDER -->
@@ -159,10 +173,12 @@
                             <input type="range" class="custom-range" min="1" max="5" id="customRange7">
                         </div>
 
+                        <hr>
+
                         <div class="form-group mx-auto">
                             <div class="question-group">
                                 <label class="questionNum">Question 8: </label>
-                                <p>You rarely get carried away by fantasies and ideas.</p>
+                                <p class="questionText">You rarely get carried away by fantasies and ideas.</p>
                             </div>
                             
                             <!-- SLIDER -->
@@ -173,10 +189,12 @@
                             <input type="range" class="custom-range" min="1" max="5" id="customRange8">
                         </div>
 
+                        <hr>
+
                         <div class="form-group mx-auto">
                             <div class="question-group">
                                 <label class="questionNum">Question 9: </label>
-                                <p>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</p>
+                                <p class="questionText">You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</p>
                             </div>
                             
                             <!-- SLIDER -->
@@ -187,10 +205,12 @@
                             <input type="range" class="custom-range" min="1" max="5" id="customRange9">
                         </div>
 
+                        <hr>
+
                         <div class="form-group mx-auto">
                             <div class="question-group">
                                 <label class="questionNum">Question 10: </label>
-                                <p>You feel more energetic after spending time with a group of people.</p>
+                                <p class="questionText">You feel more energetic after spending time with a group of people.</p>
                             </div>
                             
                             <!-- SLIDER -->
@@ -202,7 +222,7 @@
                         </div>
 
                             <button id="surveySubmit" data-target="#bestMatchModal" data-toggle="modal" type="submit"
-                            class="btn btn-primary submit mx-auto">Ready, go!</button>
+                            class="btn btn-secondary submit mx-auto">Ready, go!</button>
                 
                 
                     </form>
@@ -223,18 +243,16 @@
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="bestMatchModalTitle">Your Friend Match</h5>
+                                <h5 class="modal-title" id="bestMatchModalTitle">Your Stranger Friend Match</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
 
-                                <h3 id="bestMatch-name" class="pb-3 text-center"></h3>
+                                <h1 id="bestMatch-name" class="pb-3 text-center"></h1>
                                 <img id="bestMatch-photo" class="text-center" src="">
-
-                                <p id="bestMatch-text" class="text-center">...</p>
-
+                                <p id="bestMatch-difference-text" class="text-center">By a margin of <span id="bestMatch-difference"></span></p>
                             </div>
                 
                         </div>
@@ -245,7 +263,17 @@
             </div> <!-- end modal column-->
         </div> <!-- end modal row-->
 
-        <a href="/api/friends">Link to friends API</a>
+
+        <div class="row">
+            <div class="col-sm">
+                <p><a id="api-link" href="/api/friends">Link to API</a></p>
+            </div>
+        </div>
+                
+        <footer class="pt-3">
+            <p id="footer-text" class="footer">// from the mind of <a href="https://github.com/emilybaum"
+                    target="_blank">emilybaum</a></p>
+        </footer>
 
     </div> <!-- End of main container-->
     
@@ -258,30 +286,13 @@
         $("#surveySubmit").on("click", function () {
             event.preventDefault();
             console.log("submit clicked")
-            // $("#form-row").addClass("d-none");
-            // $("#modal-row").removeClass("d-none");
-         
-            // validateForm()
-        // Form validation
-            // function validateForm() {
-            //     console.log("form validation")
-            //     var isValid = true;
-            //     $(".form-required").each(function () {
-            //         if ($(this).val() === "") {
-            //             isValid = false;
-            //         }
-            //     });
 
-            //     $(".questionNum").each(function () {
+            function validate() {
+                if ($("#photo").val().trim() === "") {
+                    surveyAnswers.photo = "https://www.johnsonfellows.com/wp-content/uploads/2019/03/blank-head-profile-pic-for-a-man-002.jpg"
+                }
+            }
 
-            //         if ($(this).val() === "") {
-            //             isValid = false;
-            //         }
-            //     });
-            //     return isValid;
-            // }
-
-            // if (validateForm()) {
                 // Create an object for the user"s data
                 var surveyAnswers = {
                     name: $("#name").val().trim(),
@@ -300,26 +311,20 @@
                     ]
                 };
 
-            
+            validate()
 
-                // capture the user input
-                var userName = surveyAnswers.name;    
+            // capture the user input
+            var userName = surveyAnswers.name;    
 
-                $.post(currentURL + "/api/friends", surveyAnswers, function(bestMatch) {
-                    // use this space to write to the page
-                    $("#bestMatch-name").text(bestMatch.name);
-                    $("#bestMatch-photo").attr("src", bestMatch.photo);
-                    $("#bestMatchModal").modal("toggle")
-                })
-
-            // } // END OF THE FORM VALIDATION 
-
-
-
+            $.post(currentURL + "/api/friends", surveyAnswers, function(bestMatch) {
+                // use this space to write to the page
+                $("#bestMatch-name").text(bestMatch.name);
+                $("#bestMatch-photo").attr("src", bestMatch.photo);
+                $("#bestMatch-difference").text(bestMatch.scoreDiff);
+                $("#bestMatchModal").modal("toggle");
+            })
 
         }) // end button click
-
-
 
     // ----------------------------------
     </script>

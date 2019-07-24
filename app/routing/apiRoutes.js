@@ -57,7 +57,7 @@ module.exports = function (app) {
             name: "",
             photo: "",
             currentUser: user,
-            bestMatchDifference: 1000,
+            scoreDiff: 0,
         }
 
 
@@ -96,6 +96,7 @@ module.exports = function (app) {
                     diff = newdiff;
                     curr = arr[i];
                     index = i;
+                    bestMatch.scoreDiff = newdiff;
                 }
             }
 
@@ -109,6 +110,10 @@ module.exports = function (app) {
 
         // add the current user to the array of available friends
         friendsArray.push(surveyAnswers);
+
+        console.log("best match:");
+        console.log(JSON.stringify(bestMatch, null, 2));
+        console.log("--------------------------------")
 
         // send the best match to the survey.html document via the callback
         res.json(bestMatch);

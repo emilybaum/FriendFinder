@@ -1,26 +1,78 @@
 /* 
+font-family: 'Bangers', cursive;
+font-family: 'Roboto', sans-serif;
 font-family: 'Oswald', sans-serif;
+
+
  */
 
-h1 {
-    color: blue;
-    font-family: 'Oswald', sans-serif;
+html, body {
+    background-color: #2e2e2e;
 }
+
+.btn-secondary:hover {
+    background-color: red;
+}
+
+.home-logo {
+    width: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    font-family: 'Bangers', cursive;
+    color: red;
+}
+
+.stranger-text {
+    color: red;
+}
+
+label {
+    color: white;
+}
+
 
 .questionNum {
-    color: blue;
+    color: red;
+    font-size: 1.5em;
+    padding-right: 8px;
+    font-family: 'Roboto', sans-serif;
 }
 
-#footer-text {
-    font-size: 12px;
-    text-align: center;
+.questionText {
+    color: white;
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+}
+
+.custom-range {
+    color: red;
+}
+
+.home-jumbo {
+    margin: 1em;
+}
+
+#friends-img {
+    width: 20%;
+}
+
+div .d-flex {
+    color: pink;
     font-family: 'Oswald', sans-serif;
-    color: #949494;
+}
+
+.lead {
+    
 }
 
 #form-details {
     align-content: center;
 }
+
 .form-group {
     width: 75%;
     /* display: flex; */
@@ -40,25 +92,48 @@ h1 {
     justify-content: center;
 }
 
-.questionNum {
-    padding-right: 8px;
-}
-
 .modal-body {
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
 
+#bestMatch-name {
+    font-family: 'Bangers', cursive;
+}
+
 #bestMatch-photo {
     display: flex;
-    border: 3px solid blue;
     width: 100%;
+    border-radius: 10px;
+}
+
+#bestMatch-difference-text {
+    padding-top: 1em;
+    font-family: 'Roboto', sans-serif;
+    color: #2e2e2e;
+    font-size: 12px;
 }
 
 #surveySubmit {
     width: 50%;
-    align-content: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#api-link {
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none;
+    color: #5a4848;
+}
+
+#footer-text {
+    font-size: 12px;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    color: #949494;
 }
 
 
