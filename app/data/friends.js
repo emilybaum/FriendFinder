@@ -147,21 +147,36 @@ var friendsArray = [
         "name": "Jonathan",
         "photo": "https://assets.popbuzz.com/2017/44/jonathan-byers-stranger-things-1509370842-view-0.jpg",
         "scores": [
+            1,
+            3,
+            2,
             5,
+            3,
+            4,
+            3,
             5,
-            5,
-            5,
-            5,
-            5,
-            5,
-            5,
-            5,
-            5,
+            3,
+            1,
         ]
     },
+    // {
+    //     "name": "test",
+    //     "photo": "https://assets.popbuzz.com/2017/44/jonathan-byers-stranger-things-1509370842-view-0.jpg",
+    //     "scores": [
+    //         3,
+    //         3,
+    //         3,
+    //         3,
+    //         3,
+    //         3,
+    //         3,
+    //         3,
+    //         3,
+    //         3,
+    //     ]
+    // },
+    
 ];
-
-
 
 module.exports = friendsArray;
 

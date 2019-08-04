@@ -1,9 +1,5 @@
-// Your apiRoutes.js file should contain two routes:
-    // A GET route with the url/api/friends.This will be used to display a JSON of all possible friends.
-    // A POST routes /api/friends.This will be used to handle incoming survey results.This route will also be used to handle the compatibility logic.
-
 var friendsArray = require("../data/friends.js");
-
+// friendsArray[1].scores
 module.exports = function (app) {
 
     // ---------------------------------------------------------------------------
@@ -32,6 +28,7 @@ module.exports = function (app) {
         var user = {
             name: surveyAnswers.name,
             photo: surveyAnswers.photo,
+            scores: surveyAnswers.scores,
             matchScore: function() {
                 var sum = 0;
                 for (var i = 0; i < surveyAnswers.scores.length; i++) {
@@ -44,10 +41,7 @@ module.exports = function (app) {
 
         // call method for user match score and save as variable
         userMatchScore = user.matchScore();
-        console.log("Score for the current user:");
-        console.log(userMatchScore);
-        console.log("------------------------------")
-
+        console.log("Score for the current user: " + userMatchScore + "\n------------------------------");
                 
 
         // hold the scores for available friends
@@ -61,6 +55,10 @@ module.exports = function (app) {
         }
 
 
+// =================================================================================================================
+// =================================================================================================================
+
+        // ENTRY POINT TO THE LOGIC FOR SUMMATION ONLY
         getSumOfFriendScores(friendsArray, closest)
 
         // sum up the scores for each friend (includes call back to find closest match)
@@ -109,7 +107,7 @@ module.exports = function (app) {
         }
 
         // add the current user to the array of available friends
-        friendsArray.push(surveyAnswers);
+        // friendsArray.push(surveyAnswers);
 
         console.log("best match:");
         console.log(JSON.stringify(bestMatch, null, 2));
@@ -121,4 +119,60 @@ module.exports = function (app) {
 
 };
 
+// =================================================================================================================
+// =================================================================================================================
 
+
+// compareEachScoreIndex(friendsArray, user.scores); // closest (as the call back)
+
+// function makeComparisonArr(userArr) {
+//     var comparisonArr = [];
+//     for (var i = 0; i < userArr.length; i++) {
+//         i = 0;
+//         comparisonArr.push(i);
+//     }
+//     console.log("comparisonArr:")
+//     console.log(comparisonArr)
+//     console.log("-----------------------------")
+//     return comparisonArr;
+// }
+
+
+// compareEachScoreIndex(friendsArray, surveyAnswers.scores)
+// function compareEachScoreIndex(arr1, arr2) {         
+//     for (var i = 0; i < arr1.length; i++) {
+//         directCompare(arr1[i].scores, arr2);
+//     }
+// }
+
+// whichever number in the comparisonArr is the highest, that is the index that corresponds to the closest friend match
+// function makeArryOfFriends() {
+//     var friendScores;
+//     for (var j = 0; j < friendsArr.length; j++) {
+//         friendScores = friendsArr[j].scores;
+//     }
+//     directCompare(friendScores)
+// }
+
+
+// function directCompare(arr1, arr2) {
+//     console.log(arr1);
+//     console.log("-/-/-/-/-/-/-/-/-/-/-/-/-/-/-")
+//     console.log(arr2);
+// 
+//     var comparisonArr = []
+//     for (var k = 0; k < arr1.length; k++) {
+//         if (arr1[k] === arr2[k]) {
+//             comparisonArr.push(6);
+//         }
+//         else if (Math.abs(arr1[k] - arr2[k]) === 1) {
+//             // push 3 into the array for that 
+//             comparisonArr.push(3);
+//         }
+//         else {
+//             // push 0 into the array for that number
+//             comparisonArr.push(0);
+//         }
+//     }
+//     console.log("comparison array:" + comparisonArr)
+// }
